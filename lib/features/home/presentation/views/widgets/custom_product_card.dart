@@ -2,7 +2,9 @@ import 'package:flower_app/constants.dart';
 import 'package:flower_app/core/utils/app_router.dart';
 import 'package:flower_app/core/utils/styles.dart';
 import 'package:flower_app/features/home/data/models/product_model.dart';
+import 'package:flower_app/features/home/presentation/view%20models/products_manager_cubit/products_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomProductCard extends StatelessWidget {
@@ -31,7 +33,13 @@ class CustomProductCard extends StatelessWidget {
           footer: GridTileBar(
             backgroundColor: gridTileColor,
             trailing: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                BlocProvider.of<ProductsCubit>(context).manageTotalPRice(
+                  'add',
+                  product.price,
+                  product,
+                );
+              },
               icon: Icon(Icons.add, color: customColor),
             ),
             leading: Text(
