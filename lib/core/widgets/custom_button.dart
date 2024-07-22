@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
         ),
       ),
       child: Text(
-        "Login",
+        buttonName,
         style: TextStyles.textStyle20Med.copyWith(
           color: Colors.white,
         ),
