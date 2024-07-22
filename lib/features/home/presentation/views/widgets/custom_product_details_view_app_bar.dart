@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 AppBar customProductDetailsViewAppBar() {
   return AppBar(
     backgroundColor: customColor,
-    title: const Text(
+    title: Text(
       "Details Screen",
-      style: TextStyles.textStyle25Med,
+      style: TextStyles.textStyle25Med.copyWith(color: Colors.white),
     ),
     actions: [
       Row(

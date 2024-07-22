@@ -22,7 +22,10 @@ class CustomProductCard extends StatelessWidget {
       margin: const EdgeInsets.all(5),
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(AppRouter.productDetailsView);
+          GoRouter.of(context).push(
+            AppRouter.productDetailsView,
+            extra: product,
+          );
         },
         child: GridTile(
           footer: GridTileBar(

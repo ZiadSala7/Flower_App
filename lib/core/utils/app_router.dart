@@ -1,3 +1,4 @@
+import 'package:flower_app/features/home/data/models/product_model.dart';
 import 'package:flower_app/features/home/presentation/views/home_view.dart';
 import 'package:flower_app/features/home/presentation/views/product_details_view.dart';
 import 'package:flower_app/features/login/presentation/views/login_view.dart';
@@ -24,7 +25,9 @@ class AppRouter {
       ),
       GoRoute(
         path: AppRouter.productDetailsView,
-        builder: (context, state) => const ProductDetailsView(),
+        builder: (context, state) => ProductDetailsView(
+          product: state.extra as Product,
+        ),
       ),
     ],
   );

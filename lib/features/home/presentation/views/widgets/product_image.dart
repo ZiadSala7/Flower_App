@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProductImage extends StatelessWidget {
+  final String img;
   const ProductImage({
     super.key,
+    required this.img,
   });
 
   @override
@@ -12,7 +14,7 @@ class ProductImage extends StatelessWidget {
       padding: const EdgeInsets.all(5),
       width: double.infinity,
       child: Image.asset(
-        'assets/img/1.webp',
+        img,
         fit: BoxFit.cover,
       ),
     );
