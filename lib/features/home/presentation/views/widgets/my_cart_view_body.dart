@@ -1,3 +1,4 @@
+import 'package:flower_app/constants.dart';
 import 'package:flower_app/core/widgets/custom_button.dart';
 import 'package:flower_app/features/home/presentation/view%20models/products_manager_cubit/products_cubit.dart';
 import 'package:flutter/material.dart';
@@ -24,13 +25,36 @@ class _MyCartViewBodyState extends State<MyCartViewBody> {
               itemCount:
                   BlocProvider.of<ProductsCubit>(context).products.length,
               itemBuilder: (context, index) {
-                return Card(
-                  color: Colors.amber,
+                return Container(
+                  margin: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      width: 1,
+                      color: customColor!,
+                    ),
+                  ),
                   child: ListTile(
                     leading: Image.asset(BlocProvider.of<ProductsCubit>(context)
                         .products[index]
                         .productName),
                     title: Text('Flower${index + 1}'),
+                    trailing: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          BlocProvider.of<ProductsCubit>(context)
+                              .manageTotalPRice(
+                                  'del',
+                                  BlocProvider.of<ProductsCubit>(context)
+                                      .products[index]
+                                      .price,
+                                  BlocProvider.of<ProductsCubit>(context)
+                                      .products[index]);
+                        });
+                      },
+                      icon: const Icon(Icons.minimize),
+                    ),
                   ),
                 );
               },
@@ -40,8 +64,9 @@ class _MyCartViewBodyState extends State<MyCartViewBody> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: CustomButton(
-            buttonName:
-                BlocProvider.of<ProductsCubit>(context).totalPrice.toString(),
+            buttonName: BlocProvider.of<ProductsCubit>(context).products.isEmpty
+                ? '0.0'
+                : BlocProvider.of<ProductsCubit>(context).totalPrice.toString(),
             onPressed: () {},
           ),
         ),

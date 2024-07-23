@@ -9,6 +9,7 @@ class ProductsCubit extends Cubit<ProductsCubitStates> {
   void manageTotalPRice(String procces, double price, Product product) {
     if (procces == 'del') {
       totalPrice == 0 ? totalPrice = 0 : totalPrice -= price;
+      products.remove(product);
       emit(DeleteProductFromCart());
     } else {
       totalPrice += price;
