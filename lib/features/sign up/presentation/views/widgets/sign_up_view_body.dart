@@ -32,7 +32,7 @@ class SignUpViewBody extends StatelessWidget {
             ),
             CustomSignInOrLogInTextButton(
               desc: 'Do you have an account ?',
-              buttonName: 'Login in',
+              buttonName: 'Login',
               onPressed: () {
                 GoRouter.of(context).pop();
               },
