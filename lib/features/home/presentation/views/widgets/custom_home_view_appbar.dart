@@ -1,7 +1,8 @@
 import 'package:flower_app/constants.dart';
+import 'package:flower_app/core/utils/app_router.dart';
 import 'package:flower_app/core/utils/styles.dart';
-import 'package:flower_app/core/widgets/custom_action_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 AppBar customHomeViewAppBar(BuildContext context) {
   return AppBar(
@@ -13,6 +14,13 @@ AppBar customHomeViewAppBar(BuildContext context) {
         color: Colors.white,
       ),
     ),
-    actions: const [CustomActionAppBar()],
+    actions: [
+      IconButton(
+        onPressed: () {
+          GoRouter.of(context).push(AppRouter.myCartView);
+        },
+        icon: const Icon(Icons.add_shopping_cart),
+      ),
+    ],
   );
 }

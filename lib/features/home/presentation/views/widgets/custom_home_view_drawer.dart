@@ -1,4 +1,6 @@
+import 'package:flower_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomHomeViewDrawer extends StatelessWidget {
   const CustomHomeViewDrawer({
@@ -23,13 +25,17 @@ class CustomHomeViewDrawer extends StatelessWidget {
           ListTile(
             title: const Text("Home"),
             leading: const Icon(Icons.home),
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.homeView);
+            },
           ),
           const Divider(),
           ListTile(
             title: const Text("My products"),
             leading: const Icon(Icons.add_shopping_cart),
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.myCartView);
+            },
           ),
           const Divider(),
           ListTile(

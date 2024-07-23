@@ -12,6 +12,7 @@ class ProductsCubit extends Cubit<ProductsCubitStates> {
       emit(DeleteProductFromCart());
     } else {
       totalPrice += price;
+      products.add(product);
       emit(AddProductToCart());
     }
   }
