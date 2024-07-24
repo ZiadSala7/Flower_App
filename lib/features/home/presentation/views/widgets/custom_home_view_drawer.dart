@@ -26,7 +26,7 @@ class CustomHomeViewDrawer extends StatelessWidget {
             title: const Text("Home"),
             leading: const Icon(Icons.home),
             onTap: () {
-              GoRouter.of(context).push(AppRouter.homeView);
+              GoRouter.of(context).pushReplacement(AppRouter.homeView);
             },
           ),
           const Divider(),
