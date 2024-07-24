@@ -8,7 +8,7 @@ class ForgetPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar('Forget Password'),
+      appBar: customAppBar('Reset Password', centered: true),
       body: const ForgetPasswordViewBody(),
     );
   }
