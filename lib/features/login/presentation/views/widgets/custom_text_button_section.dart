@@ -15,7 +15,9 @@ class CustomTextButtonSection extends StatelessWidget {
     return Column(
       children: [
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.forgetPasswordView);
+          },
           child: Text(
             "Forget Password",
             style: TextStyles.textStyle18Med.copyWith(

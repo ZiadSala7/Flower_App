@@ -1,3 +1,4 @@
+import 'package:flower_app/features/forget%20password/presentation/views/forget_password_view.dart';
 import 'package:flower_app/features/home/data/models/product_model.dart';
 import 'package:flower_app/features/home/presentation/views/home_view.dart';
 import 'package:flower_app/features/home/presentation/views/my_cart_view.dart';
@@ -11,6 +12,8 @@ class AppRouter {
   static const String homeView = '/homeView';
   static const productDetailsView = '/productDetailsView';
   static const String myCartView = '/myCartView';
+  static const String forgetPasswordView = '/forgetPasswordView';
+
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -34,6 +37,10 @@ class AppRouter {
       GoRoute(
         path: AppRouter.myCartView,
         builder: (context, state) => const MyCartView(),
+      ),
+      GoRoute(
+        path: AppRouter.forgetPasswordView,
+        builder: (context, state) => const ForgetPasswordView(),
       ),
     ],
   );
